@@ -95,7 +95,6 @@ public class AlphabetKeyboard : MonoBehaviour
 
         for (int i = 0; i < WordList.Count; i++)
         {
-            Debug.Log("debug.log(i)" + i.ToString());
             alphabetTextComs[i].text = WordList[i].ToString();
         }
 

@@ -44,18 +44,18 @@ public class Row : MonoBehaviour
         foreach (var cell in cells)
         {
             sprites.Add(cell.GetComponent<Image>());
-            
+
         }
         for (int i = 0; i < sprites.Count; i++)
         {
-           
-            
-            StartRotation(i,sprites[i]);
+
+
+            StartRotation(i, sprites[i]);
             //Debug.Log("sprites"+(GetRowIndex()*columns+i));
         }
     }
-    
-    public void StartRotation(int i,Image uiImage)
+
+    public void StartRotation(int i, Image uiImage)
     {
 
         StartCoroutine(RotateImageCoroutine(i, uiImage));
@@ -65,7 +65,7 @@ public class Row : MonoBehaviour
     IEnumerator RotateImageCoroutine(int i, Image uiImage)
     {
         bool isChanged = false;
-        yield return new WaitForSeconds(0.2f*i);
+        yield return new WaitForSeconds(0.2f * i);
 
         if (uiImage != null)
         {
@@ -74,10 +74,10 @@ public class Row : MonoBehaviour
             float duration = 1f; // 회전에 걸리는 시간 (초)
             Quaternion startRotation = uiImage.rectTransform.rotation;
             Quaternion targetRotation = startRotation * Quaternion.Euler(0f, 180f, 0f);
-            
-            
-           
-            
+
+
+
+
             while (elapsedTime < duration)
             {
                 uiImage.rectTransform.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsedTime / duration);
@@ -87,11 +87,11 @@ public class Row : MonoBehaviour
                 {
                     isChanged = true;
                     uiImage.color = white;
-                    uiImage.sprite = gameManager.pixels[GetRowIndex()*columns+i];
+                    uiImage.sprite = gameManager.pixels[GetRowIndex() * columns + i];
                 }
                 yield return null;
             }
-           
+
         }
         else
         {
@@ -112,7 +112,7 @@ public class Row : MonoBehaviour
     {
         int cell_index = 0;
         int rowIndex = GetRowIndex();
-        Debug.Log(rowIndex);
+
         string rowAnswer = gameManager.words[rowIndex]; //단어 리스트에서 row에 해당하는 단어 가져오기
         int wordLength = rowAnswer.Length;
 
@@ -141,7 +141,7 @@ public class Row : MonoBehaviour
     }
 
 
-    private int GetRowIndex()
+    public int GetRowIndex()
     {
         //전체 테이블 오브젝트 가져오기
         Transform TableTransform = parentRow.transform.parent;
