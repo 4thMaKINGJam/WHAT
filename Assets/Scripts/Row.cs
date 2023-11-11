@@ -22,8 +22,6 @@ public class Row : MonoBehaviour
     //GameManager를 찾아서 가져오기
     private GameManager gameManager;
     
-    // Start is called before the first frame update
-
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -53,9 +51,46 @@ public class Row : MonoBehaviour
            
             sprites[i].color = white;
             sprites[i].sprite = gameManager.pixels[GetRowIndex()*columns+i];
+            StartRotation(i,sprites[i]);
             //Debug.Log("sprites"+(GetRowIndex()*columns+i));
         }
     }
+    
+    public void StartRotation(int i,Image uiImage)
+    {
+       
+            StartCoroutine(RotateImageCoroutine(i,uiImage));
+        
+    }
+
+    IEnumerator RotateImageCoroutine(int i,Image uiImage)
+    {
+ 
+        yield return new WaitForSeconds(0.2f*i);
+
+        if (uiImage != null)
+        {
+            // Y축으로 180도 회전
+            float elapsedTime = 0f;
+            float duration = 1f; // 회전에 걸리는 시간 (초)
+            Quaternion startRotation = uiImage.rectTransform.rotation;
+            Quaternion targetRotation = startRotation * Quaternion.Euler(0f, 180f, 0f);
+
+            while (elapsedTime < duration)
+            {
+                uiImage.rectTransform.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsedTime / duration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("UI Image가 할당되지 않았습니다.");
+        }
+
+  
+    }
+    
 
     private void CreateRow()
     {
