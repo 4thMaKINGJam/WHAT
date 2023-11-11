@@ -28,7 +28,7 @@ public class Row : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         CreateRow();
-       // setAnswerColor();
+        setAnswerColor();
        
     }
 
@@ -74,7 +74,7 @@ public class Row : MonoBehaviour
         for (int column = 0; column < columns; ++column)
         {
             GameObject cell = Instantiate(gridCell) as GameObject;
-            cells.Add(cell);
+         
             if (cell_index >= wordLength)
             {
                 cell.GetComponent<Image>().color = gray; //색깔수정 - 회색으로
@@ -88,6 +88,7 @@ public class Row : MonoBehaviour
                 }
             }
             cell.transform.SetParent(parentRow.transform, false);
+            cells.Add(cell);
 
             cell_index++;
         }
