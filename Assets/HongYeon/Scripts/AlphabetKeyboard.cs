@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
+using UnityEngine.EventSystems;
 
 public class AlphabetKeyboard : MonoBehaviour
 {
@@ -9,13 +12,25 @@ public class AlphabetKeyboard : MonoBehaviour
     private Text[] alphabetTextComs;
     private List<char> WordList;
 
-    
-    private string rowWord = "Applepie";
 
-    private void Awake() {
-        Image[] images = GetComponentsInChildren<Image>();
+    private string rowWord = "default";
+    Image[] images;
+
+    string getWord()
+    {
+        return rowWord;
+    }
+
+    public void setRowWord(string word)
+    {
+        rowWord = word;
+    }
+    private void Awake()
+    {
+        images = GetComponentsInChildren<Image>();
         alphabetTextComs = new Text[images.Length];
-        for (int i = 0; i < images.Length; i++){
+        for (int i = 0; i < images.Length; i++)
+        {
             alphabetTextComs[i] = images[i].GetComponentInChildren<Text>();
         }
 
@@ -24,11 +39,39 @@ public class AlphabetKeyboard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+
+    //imgaes의 클릭을 모두 해제하는 함수
+    void ResetButton()
+    {
+    }
+
+    public void SetKeyboard()
+    {
+        WordList = new List<char>();
+        ResetButton();
+        this.gameObject.SetActive(true);
         int wordLength = rowWord.Length; //행의 단어 쪼개서 키보드에 넣기
-        for (int i = 0; i < wordLength; i++)
+        for (int i = 0; i < rowWord.Length; i++)
         {
+            if (rowWord[i] == ' ')
+            {
+                wordLength--;
+                continue;
+            }
             WordList.Add(char.ToUpper(rowWord[i]));
         }
+        // Debug.Log("wordLength는" + wordLength.ToString());
 
         int remainWord = 14 - wordLength; //행 단어를 넣고 남은 키보드의 단어 수
 
@@ -38,9 +81,10 @@ public class AlphabetKeyboard : MonoBehaviour
             WordList.Add(randomAlphabet);
         }
         //키보드 리스트 섞기
-        int random1,  random2;
+        int random1, random2;
         char temp;
-        for (int i = 0; i< WordList.Count; i++){
+        for (int i = 0; i < WordList.Count; i++)
+        {
             random1 = Random.Range(0, WordList.Count);
             random2 = Random.Range(0, WordList.Count);
 
@@ -49,14 +93,14 @@ public class AlphabetKeyboard : MonoBehaviour
             WordList[random2] = temp;
         }
 
-        for (int i = 0; i < WordList.Count; i++){
-            alphabetTextComs[i].text = WordList[i].ToString(); 
+        for (int i = 0; i < WordList.Count; i++)
+        {
+            Debug.Log("debug.log(i)" + i.ToString());
+            alphabetTextComs[i].text = WordList[i].ToString();
         }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
 }

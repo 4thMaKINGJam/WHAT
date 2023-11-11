@@ -7,23 +7,44 @@ using UnityEngine.UI;
 public class RowClickHandler : MonoBehaviour, IPointerClickHandler
 {
     public GameObject focusBox;
-    public Image row;
+    public GameObject keyBoard;
+    public GameObject MeaningPanel;
+
+    private GameManager gameManager;
+
+    private int rowIndex;
+    private bool hasBeenClicked = false; // 클릭 이벤트가 처리되었는지 여부를 추적하는 플래그
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         focusBox.SetActive(false);
 
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("onclick");
-        ShowFocusBox();
+
+        if (!hasBeenClicked)
+        {
+            Debug.Log("클릭됨");
+            ShowFocus();
+            hasBeenClicked = true;
+        }
     }
 
-    void ShowFocusBox()
+    void ShowFocus()
     {
-        focusBox.SetActive(true);
+
+        // focusBox.SetActive(true);
+        keyBoard.GetComponent<AlphabetKeyboard>().setRowWord(gameManager.words[rowIndex]);
+        keyBoard.GetComponent<AlphabetKeyboard>().SetKeyboard();
+
+
+
     }
     void HideFocusBox()
     {

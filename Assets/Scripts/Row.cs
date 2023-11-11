@@ -15,19 +15,19 @@ public class Row : MonoBehaviour
 
     public int columns = 0;
     public GameObject gridCell;
-    
+
     //해당 ROW의 셀들을 담을 리스트
     private List<GameObject> cells = new List<GameObject>();
 
     //GameManager를 찾아서 가져오기
     private GameManager gameManager;
-    
+
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         CreateRow();
-        setAnswerColor();
-       
+        // setAnswerColor();
+
     }
 
     // Update is called once per frame
@@ -37,36 +37,36 @@ public class Row : MonoBehaviour
     }
 
     // 정답 맞출시 호출
-    void setAnswerColor()
-    {
-        List<Image> sprites = new List<Image>(); //=  gameObject.GetComponentsInChildren<Image>();
+    // void setAnswerColor()
+    // {
+    //     List<Image> sprites = new List<Image>(); //=  gameObject.GetComponentsInChildren<Image>();
 
-        foreach (var cell in cells)
-        {
-            sprites.Add(cell.GetComponent<Image>());
-            
-        }
-        for (int i = 0; i < sprites.Count; i++)
-        {
-           
-            sprites[i].color = white;
-            sprites[i].sprite = gameManager.pixels[GetRowIndex()*columns+i];
-            StartRotation(i,sprites[i]);
-            //Debug.Log("sprites"+(GetRowIndex()*columns+i));
-        }
-    }
-    
-    public void StartRotation(int i,Image uiImage)
+    //     foreach (var cell in cells)
+    //     {
+    //         sprites.Add(cell.GetComponent<Image>());
+
+    //     }
+    //     for (int i = 0; i < sprites.Count; i++)
+    //     {
+
+    //         sprites[i].color = white;
+    //         sprites[i].sprite = gameManager.pixels[GetRowIndex() * columns + i];
+    //         StartRotation(i, sprites[i]);
+    //         Debug.Log("sprites" + (GetRowIndex() * columns + i));
+    //     }
+    // }
+
+    public void StartRotation(int i, Image uiImage)
     {
-       
-            StartCoroutine(RotateImageCoroutine(i,uiImage));
-        
+
+        StartCoroutine(RotateImageCoroutine(i, uiImage));
+
     }
 
-    IEnumerator RotateImageCoroutine(int i,Image uiImage)
+    IEnumerator RotateImageCoroutine(int i, Image uiImage)
     {
- 
-        yield return new WaitForSeconds(0.2f*i);
+
+        yield return new WaitForSeconds(0.2f * i);
 
         if (uiImage != null)
         {
@@ -88,9 +88,9 @@ public class Row : MonoBehaviour
             Debug.LogWarning("UI Image가 할당되지 않았습니다.");
         }
 
-  
+
     }
-    
+
 
     private void CreateRow()
     {
@@ -109,7 +109,7 @@ public class Row : MonoBehaviour
         for (int column = 0; column < 10; ++column)
         {
             GameObject cell = Instantiate(gridCell) as GameObject;
-         
+
             if (cell_index >= wordLength)
             {
                 cell.GetComponent<Image>().color = gray; //색깔수정 - 회색으로
