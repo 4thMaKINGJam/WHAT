@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1066614827446682401}
   - component: {fileID: 1066614827446682400}
   m_Layer: 5
-  m_Name: Image
+  m_Name: key
   m_TagString: Alphabet Image
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,19 +122,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1066614827446682402}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1066614827446682398}
-        m_TargetAssemblyTypeName: Alphabet, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1066614827446682400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,10 +132,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1066614827446682398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19978a52add2c42518e24bd3bf71be14, type: 3}
+  m_Script: {fileID: 11500000, guid: 33421627d82d44e00bc27f9939e40b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newImage: {fileID: 21300000, guid: f5c5ea2064960470688d4e0514b6a936, type: 3}
+  newImage: {fileID: 21300000, guid: 1934ed010f9a548048bcc51426d8204c, type: 3}
 --- !u!1 &4150704449705040966
 GameObject:
   m_ObjectHideFlags: 0

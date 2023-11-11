@@ -13,22 +13,23 @@ public class Row : MonoBehaviour
     public GameObject parentRow;
 
 
-
     public int columns = 0;
     public GameObject gridCell;
-
+    
     //해당 ROW의 셀들을 담을 리스트
-    private List<GameObject> cells;
+    private List<GameObject> cells = new List<GameObject>();
 
     //GameManager를 찾아서 가져오기
     private GameManager gameManager;
-
+    
     // Start is called before the first frame update
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         CreateRow();
+        setAnswerColor();
+       
     }
 
     // Update is called once per frame
@@ -40,13 +41,19 @@ public class Row : MonoBehaviour
     // 정답 맞출시 호출
     void setAnswerColor()
     {
-        Image[] sprites = gameObject.GetComponentsInChildren<Image>();
+        List<Image> sprites = new List<Image>(); //=  gameObject.GetComponentsInChildren<Image>();
 
-        for (int i = 0; i < sprites.Length; i++)
+        foreach (var cell in cells)
         {
-
+            sprites.Add(cell.GetComponent<Image>());
+            
+        }
+        for (int i = 0; i < sprites.Count; i++)
+        {
+           
             sprites[i].color = white;
-            sprites[i].sprite = gameManager.pixels[GetRowIndex() * columns + i];
+            sprites[i].sprite = gameManager.pixels[GetRowIndex()*columns+i];
+            //Debug.Log("sprites"+(GetRowIndex()*columns+i));
         }
     }
 
@@ -64,9 +71,10 @@ public class Row : MonoBehaviour
         string rowAnswer = gameManager.words[rowIndex]; //단어 리스트에서 row에 해당하는 단어 가져오기
         int wordLength = rowAnswer.Length;
 
-        for (int column = 0; column < columns; ++column)
+        for (int column = 0; column < 10; ++column)
         {
             GameObject cell = Instantiate(gridCell) as GameObject;
+         
             if (cell_index >= wordLength)
             {
                 cell.GetComponent<Image>().color = gray; //색깔수정 - 회색으로
@@ -88,7 +96,7 @@ public class Row : MonoBehaviour
     }
 
 
-    public int GetRowIndex()
+    private int GetRowIndex()
     {
         //전체 테이블 오브젝트 가져오기
         Transform TableTransform = parentRow.transform.parent;
@@ -113,5 +121,4 @@ public class Row : MonoBehaviour
         }
         return currentIndex;
     }
-
 }

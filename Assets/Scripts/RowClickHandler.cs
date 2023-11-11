@@ -7,43 +7,26 @@ using UnityEngine.UI;
 public class RowClickHandler : MonoBehaviour, IPointerClickHandler
 {
     public GameObject focusBox;
-    public GameObject keyBoard;
-    public GameObject Row;
-    private GameManager gameManager;
-
-    private int rowIndex;
+    public Image row;
     // Start is called before the first frame update
     void Start()
     {
-        // focusBox.SetActive(false);
-        //keyBoard = GameObject.Find("SetActive").GetChild(0);
-
-        rowIndex = this.GetComponent<Row>().GetRowIndex();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        focusBox.SetActive(false);
 
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("onclick");
-
-        ShowFocus();
+        ShowFocusBox();
     }
 
-    void ShowFocus()
+    void ShowFocusBox()
     {
-        Debug.Log(rowIndex);
-        // focusBox.SetActive(true);
-        keyBoard.GetComponent<AlphabetKeyboard>().setRowWord(gameManager.words[rowIndex]);
-        keyBoard.SetActive(true);
-
-
-
+        focusBox.SetActive(true);
     }
-    void HideFocus()
+    void HideFocusBox()
     {
-        // focusBox.SetActive(false);
-        keyBoard.SetActive(false);
+        focusBox.SetActive(false);
     }
-
 }
