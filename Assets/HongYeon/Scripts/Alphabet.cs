@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,16 @@ using UnityEngine.UI;
 
 public class Alphabet : MonoBehaviour
 {
-    public Sprite newImage; // 클릭할 때 보여질 새 이미지
-
+    private Sprite clickedImage; // 클릭할 때 보여질 새 이미지
+    private Sprite originalImage; 
     private Image myImage;
+
+    private void Awake()
+    {
+        // Resources 폴더에서 이미지 가져오기
+       // clickedImage = Resources.Load<Sprite>("Clicked");
+       // originalImage = Resources.Load<Sprite>("Original");
+    }
 
     void Start()
     {
@@ -19,6 +27,12 @@ public class Alphabet : MonoBehaviour
 
     void ChangeImage()
     {
-        myImage.sprite = newImage;
+        myImage.color = new Color(0.4f,0.4f,0.4f);
+    }
+
+    void resetImage()
+    {
+        myImage.color = new Color(1f,1f,1f);
+     //   myImage.sprite = clickedImage;
     }
 }

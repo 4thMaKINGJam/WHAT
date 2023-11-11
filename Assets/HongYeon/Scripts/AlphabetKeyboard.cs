@@ -14,8 +14,8 @@ public class AlphabetKeyboard : MonoBehaviour
 
 
     private string rowWord = "default";
-    Image[] images;
-
+    Image[] images = new Image[14];
+    Image[] frames = new Image[14];
     string getWord()
     {
         return rowWord;
@@ -33,7 +33,7 @@ public class AlphabetKeyboard : MonoBehaviour
         {
             alphabetTextComs[i] = images[i].GetComponentInChildren<Text>();
         }
-
+        Debug.Log("awake");
         WordList = new List<char>();
     }
     // Start is called before the first frame update
@@ -54,13 +54,33 @@ public class AlphabetKeyboard : MonoBehaviour
     //imgaes의 클릭을 모두 해제하는 함수
     void ResetButton()
     {
+        for (int i = 0; i < images.Length; i++)
+        {
+            images[i].color = new Color(1f, 1f, 1f);
+        }
     }
 
+    public void setFrame(int index)
+    {
+        frames = GameObject.Find("Frame").GetComponentsInChildren<Image>();
+
+        for (int i = 0; i < frames.Length; i++)
+        {
+            frames[i].enabled = false;
+            if (i == index)
+            {
+                frames[i].enabled = true;
+                Debug.Log("index: " + i);
+            }
+        }
+
+    }
     public void SetKeyboard()
     {
         WordList = new List<char>();
-        ResetButton();
+
         this.gameObject.SetActive(true);
+        ResetButton();
         int wordLength = rowWord.Length; //행의 단어 쪼개서 키보드에 넣기
         for (int i = 0; i < rowWord.Length; i++)
         {

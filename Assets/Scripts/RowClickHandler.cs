@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class RowClickHandler : MonoBehaviour, IPointerClickHandler
 {
-    public GameObject focusBox;
+    // public Image focusBox;
     public GameObject keyBoard;
     public GameObject meaningPanel;
 
@@ -26,6 +26,7 @@ public class RowClickHandler : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        //focusBox.enabled = false;
 
         meaningPanel = GameObject.Find("Canvas").transform.Find("Meaning").gameObject;
         // if (meaningPanel != null)
@@ -39,7 +40,7 @@ public class RowClickHandler : MonoBehaviour, IPointerClickHandler
 
 
 
-        focusBox.SetActive(false);
+
         keyBoard.SetActive(false);
 
         //클릭한 row가 몇 번째 행인지 가져오기
@@ -50,26 +51,27 @@ public class RowClickHandler : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
 
-        if (!hasBeenClicked)
+
+        Debug.Log("클릭됨");
+
+        RowClickHandler[] siblings = transform.parent.GetComponentsInChildren<RowClickHandler>();
+        foreach (RowClickHandler sibling in siblings)
         {
-            Debug.Log("클릭됨");
-
-            RowClickHandler[] siblings = transform.parent.GetComponentsInChildren<RowClickHandler>();
-            foreach (RowClickHandler sibling in siblings)
+            if (sibling != this)
             {
-                if (sibling != this)
-                {
-                    sibling.SetClicked(false);
-                }
+                sibling.SetClicked(false);
             }
-
-            ShowFocus();
-            hasBeenClicked = true;
         }
+
+        ShowFocus();
+        hasBeenClicked = true;
+        this.GetComponent<Image>().color = new Color(0.4f, 0.4f, 0.4f);
+
     }
 
     void ShowFocus()
     {
+        rowIndex = this.transform.GetSiblingIndex();
 
         // focusBox.SetActive(true);
         Debug.Log("rowIndex : " + rowIndex.ToString());
@@ -82,9 +84,9 @@ public class RowClickHandler : MonoBehaviour, IPointerClickHandler
         keyBoard.GetComponent<AlphabetKeyboard>().setRowWord(gameManager.words[rowIndex]);
         //키보드 보이게 + 키보드 글자 생성
         keyBoard.GetComponent<AlphabetKeyboard>().SetKeyboard();
+        keyBoard.GetComponent<AlphabetKeyboard>().setFrame(rowIndex);
 
-
-
+        hasBeenClicked = false;
     }
     void HideFocus()
     {
