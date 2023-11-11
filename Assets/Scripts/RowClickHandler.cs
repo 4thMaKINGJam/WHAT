@@ -8,7 +8,7 @@ public class RowClickHandler : MonoBehaviour, IPointerClickHandler
 {
     public GameObject focusBox;
     public GameObject keyBoard;
-    public GameObject MeaningPanel;
+    public GameObject meaningPanel;
 
     private GameManager gameManager;
 
@@ -18,10 +18,24 @@ public class RowClickHandler : MonoBehaviour, IPointerClickHandler
 
 
     // Start is called before the first frame update
+
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        meaningPanel = GameObject.Find("Canvas").transform.Find("Meaning").gameObject;
+        Debug.Log(meaningPanel);
+        if (meaningPanel != null)
+        {
+            meaningPanel.SetActive(false);
+        }
+        if (keyBoard != null)
+        {
+            keyBoard.SetActive(false);
+        }
+
         focusBox.SetActive(false);
+        keyBoard.SetActive(false);
 
     }
 
@@ -40,6 +54,7 @@ public class RowClickHandler : MonoBehaviour, IPointerClickHandler
     {
 
         // focusBox.SetActive(true);
+        meaningPanel.SetActive(true);
         keyBoard.GetComponent<AlphabetKeyboard>().setRowWord(gameManager.words[rowIndex]);
         keyBoard.GetComponent<AlphabetKeyboard>().SetKeyboard();
 
