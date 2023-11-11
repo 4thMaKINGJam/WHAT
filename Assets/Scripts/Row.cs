@@ -48,12 +48,21 @@ public class Row : MonoBehaviour
         Debug.Log(rowIndex);
         string rowAnswer = gameManager.words[rowIndex]; //단어 리스트에서 row에 해당하는 단어 가져오기
         int wordLength = rowAnswer.Length;
+
         for (int column = 0; column < columns; ++column)
         {
             GameObject cell = Instantiate(gridCell) as GameObject;
             if (cell_index >= wordLength)
             {
-                cell.GetComponent<Image>().color = gray; //색깔수정
+                cell.GetComponent<Image>().color = gray; //색깔수정 - 회색으로
+            }
+
+            else
+            {
+                if (rowAnswer[column].Equals(' '))
+                {
+                    cell.GetComponent<Image>().color = gray; //색깔수정 - 띄어쓰기
+                }
             }
             cell.transform.SetParent(parentRow.transform, false);
 
