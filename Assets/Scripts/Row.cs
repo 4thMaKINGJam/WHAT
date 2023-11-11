@@ -13,23 +13,23 @@ public class Row : MonoBehaviour
     public GameObject parentRow;
 
 
+
     public int columns = 0;
     public GameObject gridCell;
-    
+
     //해당 ROW의 셀들을 담을 리스트
     private List<GameObject> cells;
 
     //GameManager를 찾아서 가져오기
     private GameManager gameManager;
-    
+
     // Start is called before the first frame update
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         CreateRow();
-       // setAnswerColor();
-       
+
     }
 
     // Update is called once per frame
@@ -41,19 +41,13 @@ public class Row : MonoBehaviour
     // 정답 맞출시 호출
     void setAnswerColor()
     {
-        List<Image> sprites = new List<Image>(); //=  gameObject.GetComponentsInChildren<Image>();
+        Image[] sprites = gameObject.GetComponentsInChildren<Image>();
 
-        foreach (var cell in cells)
+        for (int i = 0; i < sprites.Length; i++)
         {
-            sprites.Add(cell.GetComponent<Image>());
-            
-        }
-        for (int i = 0; i < sprites.Count; i++)
-        {
-           
+
             sprites[i].color = white;
-            sprites[i].sprite = gameManager.pixels[GetRowIndex()*columns+i];
-            //Debug.Log("sprites"+(GetRowIndex()*columns+i));
+            sprites[i].sprite = gameManager.pixels[GetRowIndex() * columns + i];
         }
     }
 
@@ -74,7 +68,7 @@ public class Row : MonoBehaviour
         for (int column = 0; column < columns; ++column)
         {
             GameObject cell = Instantiate(gridCell) as GameObject;
-            cells.Add(cell);
+
             if (cell_index >= wordLength)
             {
                 cell.GetComponent<Image>().color = gray; //색깔수정 - 회색으로
@@ -95,7 +89,7 @@ public class Row : MonoBehaviour
     }
 
 
-    private int GetRowIndex()
+    public int GetRowIndex()
     {
         //전체 테이블 오브젝트 가져오기
         Transform TableTransform = parentRow.transform.parent;
@@ -120,4 +114,5 @@ public class Row : MonoBehaviour
         }
         return currentIndex;
     }
+
 }
