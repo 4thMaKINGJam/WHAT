@@ -9,4 +9,8 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("CollectionScene");
     }
+    public void ChangeToTestScene()
+    {
+        SceneManager.LoadScene("TestScene");
+    }
 }

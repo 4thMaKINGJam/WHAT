@@ -76,12 +76,15 @@ public class RowClickHandler : MonoBehaviour, IPointerClickHandler
         // focusBox.SetActive(true);
         Debug.Log("rowIndex : " + rowIndex.ToString());
 
+        string answer = gameManager.words[rowIndex];
+
         //뜻 보이게
         meaningPanel.SetActive(true);
         meaningPanel.transform.GetChild(0).GetComponent<Text>().text = gameManager.meanings[rowIndex];
+        meaningPanel.transform.GetChild(1).GetComponent<Text>().text = answer;
 
         //선택한 행의 정답 단어 할당
-        keyBoard.GetComponent<AlphabetKeyboard>().setRowWord(gameManager.words[rowIndex]);
+        keyBoard.GetComponent<AlphabetKeyboard>().setRowWord(answer);
         //키보드 보이게 + 키보드 글자 생성
         keyBoard.GetComponent<AlphabetKeyboard>().SetKeyboard();
         keyBoard.GetComponent<AlphabetKeyboard>().setFrame(rowIndex);
