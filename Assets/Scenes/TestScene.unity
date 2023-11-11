@@ -274,7 +274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43eb51e6113c4fa295afb190b85389c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusBox: {fileID: 1076611999}
   keyBoard: {fileID: 1076611999}
   MeaningPanel: {fileID: 0}
 --- !u!114 &39345975
@@ -604,7 +603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43eb51e6113c4fa295afb190b85389c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusBox: {fileID: 1076611999}
   keyBoard: {fileID: 1076611999}
   MeaningPanel: {fileID: 0}
 --- !u!114 &367647368
@@ -753,7 +751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43eb51e6113c4fa295afb190b85389c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusBox: {fileID: 1076611999}
   keyBoard: {fileID: 1076611999}
   MeaningPanel: {fileID: 0}
 --- !u!114 &381316154
@@ -902,7 +899,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43eb51e6113c4fa295afb190b85389c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusBox: {fileID: 1076611999}
   keyBoard: {fileID: 1076611999}
   MeaningPanel: {fileID: 0}
 --- !u!114 &475630485
@@ -1318,7 +1314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43eb51e6113c4fa295afb190b85389c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusBox: {fileID: 1076611999}
   keyBoard: {fileID: 1076611999}
   MeaningPanel: {fileID: 0}
 --- !u!114 &543289847
@@ -1686,7 +1681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43eb51e6113c4fa295afb190b85389c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusBox: {fileID: 1076611999}
   keyBoard: {fileID: 1076611999}
   MeaningPanel: {fileID: 0}
 --- !u!114 &862666088
@@ -2737,7 +2731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43eb51e6113c4fa295afb190b85389c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusBox: {fileID: 1076611999}
   keyBoard: {fileID: 1076611999}
   MeaningPanel: {fileID: 0}
 --- !u!114 &1242265039
@@ -2993,7 +2986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43eb51e6113c4fa295afb190b85389c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusBox: {fileID: 1076611999}
   keyBoard: {fileID: 1076611999}
   MeaningPanel: {fileID: 0}
 --- !u!114 &1506254836
@@ -3445,7 +3437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43eb51e6113c4fa295afb190b85389c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusBox: {fileID: 1076611999}
   keyBoard: {fileID: 1076611999}
   MeaningPanel: {fileID: 0}
 --- !u!114 &1643005489
@@ -3696,7 +3687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43eb51e6113c4fa295afb190b85389c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusBox: {fileID: 1076611999}
   keyBoard: {fileID: 1076611999}
   MeaningPanel: {fileID: 0}
 --- !u!114 &1882518385
