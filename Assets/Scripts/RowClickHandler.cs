@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class RowClickHandler : MonoBehaviour, IPointerClickHandler
 {
-    public GameObject focusBox;
+   // public Image focusBox;
     public GameObject keyBoard;
     public GameObject MeaningPanel;
 
@@ -21,33 +21,34 @@ public class RowClickHandler : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        focusBox.SetActive(false);
+        //focusBox.enabled = false;
 
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
 
-        if (!hasBeenClicked)
-        {
+       
             Debug.Log("클릭됨");
             ShowFocus();
             hasBeenClicked = true;
-        }
+            this.GetComponent<Image>().color = new Color(0.4f, 0.4f, 0.4f);
+        
     }
 
     void ShowFocus()
     {
+        rowIndex = this.transform.GetSiblingIndex();
 
         // focusBox.SetActive(true);
         keyBoard.GetComponent<AlphabetKeyboard>().setRowWord(gameManager.words[rowIndex]);
         keyBoard.GetComponent<AlphabetKeyboard>().SetKeyboard();
+        keyBoard.GetComponent<AlphabetKeyboard>().setFrame(rowIndex);
 
-
-
+        hasBeenClicked = false;
     }
     void HideFocusBox()
     {
-        focusBox.SetActive(false);
+        //focusBox.enabled = false;
     }
 }
