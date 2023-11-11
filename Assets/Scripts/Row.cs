@@ -26,7 +26,7 @@ public class Row : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         CreateRow();
-        // setAnswerColor();
+        //setAnswerColor();
 
     }
 
@@ -37,26 +37,25 @@ public class Row : MonoBehaviour
     }
 
     // 정답 맞출시 호출
-    // void setAnswerColor()
-    // {
-    //     List<Image> sprites = new List<Image>(); //=  gameObject.GetComponentsInChildren<Image>();
+    void setAnswerColor()
+    {
+        List<Image> sprites = new List<Image>(); //=  gameObject.GetComponentsInChildren<Image>();
 
-    //     foreach (var cell in cells)
-    //     {
-    //         sprites.Add(cell.GetComponent<Image>());
-
-    //     }
-    //     for (int i = 0; i < sprites.Count; i++)
-    //     {
-
-    //         sprites[i].color = white;
-    //         sprites[i].sprite = gameManager.pixels[GetRowIndex() * columns + i];
-    //         StartRotation(i, sprites[i]);
-    //         Debug.Log("sprites" + (GetRowIndex() * columns + i));
-    //     }
-    // }
-
-    public void StartRotation(int i, Image uiImage)
+        foreach (var cell in cells)
+        {
+            sprites.Add(cell.GetComponent<Image>());
+            
+        }
+        for (int i = 0; i < sprites.Count; i++)
+        {
+           
+            
+            StartRotation(i,sprites[i]);
+            //Debug.Log("sprites"+(GetRowIndex()*columns+i));
+        }
+    }
+    
+    public void StartRotation(int i,Image uiImage)
     {
 
         StartCoroutine(RotateImageCoroutine(i, uiImage));
@@ -65,8 +64,8 @@ public class Row : MonoBehaviour
 
     IEnumerator RotateImageCoroutine(int i, Image uiImage)
     {
-
-        yield return new WaitForSeconds(0.2f * i);
+        bool isChanged = false;
+        yield return new WaitForSeconds(0.2f*i);
 
         if (uiImage != null)
         {
@@ -75,13 +74,24 @@ public class Row : MonoBehaviour
             float duration = 1f; // 회전에 걸리는 시간 (초)
             Quaternion startRotation = uiImage.rectTransform.rotation;
             Quaternion targetRotation = startRotation * Quaternion.Euler(0f, 180f, 0f);
-
+            
+            
+           
+            
             while (elapsedTime < duration)
             {
                 uiImage.rectTransform.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsedTime / duration);
                 elapsedTime += Time.deltaTime;
+
+                if (elapsedTime > 0.5 && isChanged == false)
+                {
+                    isChanged = true;
+                    uiImage.color = white;
+                    uiImage.sprite = gameManager.pixels[GetRowIndex()*columns+i];
+                }
                 yield return null;
             }
+           
         }
         else
         {
