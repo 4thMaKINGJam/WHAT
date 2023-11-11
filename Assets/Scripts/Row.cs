@@ -28,6 +28,7 @@ public class Row : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         CreateRow();
+       // setAnswerColor();
        
     }
 
@@ -40,12 +41,19 @@ public class Row : MonoBehaviour
     // 정답 맞출시 호출
     void setAnswerColor()
     {
-        Image[] sprites = gameObject.GetComponentsInChildren<Image>();
-        
-        for (int i = 0; i < sprites.Length; i++)
+        List<Image> sprites = new List<Image>(); //=  gameObject.GetComponentsInChildren<Image>();
+
+        foreach (var cell in cells)
         {
+            sprites.Add(cell.GetComponent<Image>());
+            
+        }
+        for (int i = 0; i < sprites.Count; i++)
+        {
+           
             sprites[i].color = white;
             sprites[i].sprite = gameManager.pixels[GetRowIndex()*columns+i];
+            //Debug.Log("sprites"+(GetRowIndex()*columns+i));
         }
     }
 
@@ -66,7 +74,7 @@ public class Row : MonoBehaviour
         for (int column = 0; column < columns; ++column)
         {
             GameObject cell = Instantiate(gridCell) as GameObject;
-           
+            cells.Add(cell);
             if (cell_index >= wordLength)
             {
                 cell.GetComponent<Image>().color = gray; //색깔수정 - 회색으로
