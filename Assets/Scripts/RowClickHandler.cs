@@ -6,18 +6,18 @@ using UnityEngine.UI;
 
 public class RowClickHandler : MonoBehaviour, IPointerClickHandler
 {
-    // public Image focusBox;
-    public GameObject keyBoard;
-    public GameObject meaningPanel;
 
+    //키보드 오브젝트
+    public GameObject keyBoard;
+    //meaning 오브젝트
+    public GameObject meaningPanel;
+    //GameManager 오브젝트
     private GameManager gameManager;
 
+
+    //현재 행 인덱스 저장할 변수
     private int rowIndex;
     public bool hasBeenClicked = false; // 클릭 이벤트가 처리되었는지 여부를 추적하는 플래그
-
-
-
-    // List<GameObject> rowList;
 
 
 
@@ -29,14 +29,14 @@ public class RowClickHandler : MonoBehaviour, IPointerClickHandler
         //focusBox.enabled = false;
 
         meaningPanel = GameObject.Find("Canvas").transform.Find("Meaning").gameObject;
-        // if (meaningPanel != null)
-        // {
-        //     meaningPanel.SetActive(false);
-        // }
-        // if (keyBoard != null)
-        // {
-        //     keyBoard.SetActive(false);
-        // }
+        if (meaningPanel != null)
+        {
+            meaningPanel.SetActive(false);
+        }
+        if (keyBoard != null)
+        {
+            keyBoard.SetActive(false);
+        }
 
 
 
