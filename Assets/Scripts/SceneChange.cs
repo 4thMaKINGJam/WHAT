@@ -21,4 +21,31 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("TestScene");
     }
+
+    public void ChangeToStage2()
+    {
+        SceneManager.LoadScene("Stage2");
+    }
+
+    public void ChangeToStage3()
+    {
+        SceneManager.LoadScene("Stage3");
+    }
+
+
+    public void ChangeToStage4()
+    {
+        SceneManager.LoadScene("Stage4");
+    }
+
+
+    public void ChangeToStage5()
+    {
+        SceneManager.LoadScene("Stage5");
+    }
+
+    public void ChangeToStage6()
+    {
+        SceneManager.LoadScene("Stage6");
+    }
 }
