@@ -47,7 +47,7 @@ public class Row : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         CreateRow();
-        setAnswerColor();
+        //setAnswerColor();
 
     }
 
@@ -79,7 +79,7 @@ public class Row : MonoBehaviour
        }
     }
 
-    public void checkAnswer(string input)
+    public bool checkAnswer(string input)
     {
         clearCell();
         
@@ -105,12 +105,22 @@ public class Row : MonoBehaviour
             //Debug.Log("정답 답+"+answer+"입력"+input);
             resetFrameForWord();
             setAnswerColor();
-            
+            SoundManager.instance.PlayCorrectSound();
+            return true;
+
         }
         else
         {
             Debug.Log("실패");
             setActiveFrameForWord(0);
+            GameObject.Find("GameManager").GetComponent<GameManager>().showminusLife();
+//            SoundManager.instance.PlayIncorrectSound();
+            
+            if(GameObject.Find("GameManager").GetComponent<GameManager>().life == 0)
+            {
+                GameObject.Find("Canvas").transform.Find("gameover").gameObject.SetActive(true);
+            }
+            return false;
         }
         
     }
