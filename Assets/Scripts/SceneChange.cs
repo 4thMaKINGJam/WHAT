@@ -30,9 +30,11 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("TestScene");
     }
+
     public void ChangeToTutorialScene()
     {
         SceneManager.LoadScene("Tutorial");
+    }
 
     public void ChangeToStage2()
     {
