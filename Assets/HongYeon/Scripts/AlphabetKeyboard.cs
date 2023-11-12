@@ -45,7 +45,6 @@ public class AlphabetKeyboard : MonoBehaviour
         WordList = new List<char>();
     }
 
-
     public bool clickBtn(char input,Image img)
     {
         Row rowScript = selectedRow.GetComponent<Row>();
@@ -83,14 +82,19 @@ public class AlphabetKeyboard : MonoBehaviour
     public void clickCheckBtn( )
     {
         Row rowScript = selectedRow.GetComponent<Row>();
-        if( rowScript.getTotalIndex() <= userInputsIndex)
+
+        string input = "";
+        foreach (var ch in userInputs)
         {
-            return ;
+            
+             input += ch;
         }
-       // userInputs[userInputsIndex] = input;
-        userInputsIndex++;
-        rowScript.setInput(userInputs,userInputsIndex);
-   
+        
+//        Debug.Log(input +"here");
+        rowScript.checkAnswer(input);
+        ResetButton();
+        userInputsIndex = 0;
+        userInputs = new char[10];
     }
 
     //imgaes의 클릭을 모두 해제하는 함수
@@ -122,7 +126,18 @@ public class AlphabetKeyboard : MonoBehaviour
         //word frame
         userInputsIndex = 0;
         selectedRow = row;
+        
+        GameObject gms = row.transform.parent.gameObject;
+        
+        Row[] rows = gms.GetComponentsInChildren<Row>();
+
+        for (int i = 0; i < rows.Length; i++)
+        {
+            rows[i].resetFrameForWord();
+        }
         row.GetComponent<Row>().setActiveFrameForWord( userInputsIndex); 
+        
+        
 
     }
     public void SetKeyboard()

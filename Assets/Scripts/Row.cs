@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,6 +57,63 @@ public class Row : MonoBehaviour
 
     }
 
+    void clearCell()
+    {
+       for(int i =0 ; i <cells.Count; i++)
+       {
+            cells[i].transform.GetChild(1).GetComponent<Text>().text = "";
+            cells[i].GetComponent<Image>().color = white;
+            
+            if (totalGray>0 && grayIndex[0]==i )
+            {
+                cells[i].GetComponent<Image>().color = gray;
+            }
+            else if (i > rowAnswer.Length-totalGray)
+            {
+                cells[i].GetComponent<Image>().color = gray;
+            }
+            else
+            {
+                cells[i].GetComponent<Image>().color = white;
+            }
+       }
+    }
+
+    public void checkAnswer(string input)
+    {
+        clearCell();
+        
+        string answer = rowAnswer.Replace(" ", "").ToUpper();
+        input = input.ToUpper().Trim();
+       // Debug.Log(input+"답"+answer+"입력"+input+"aaaaa");
+        Debug.Log(input.Length+"답"+answer.Length+"입력"+input.Length+"aaaaa");
+        bool flag = false;
+        
+        for (int i = 0; i < answer.Length; i++)
+        {
+            if(input[i]!=answer[i])
+            {
+                Debug.Log("정답 답+"+answer[i]+"입력"+input[i]);
+                flag = false;
+                break;
+            }
+            flag = true;
+        }
+        
+        if (flag)
+        {
+            //Debug.Log("정답 답+"+answer+"입력"+input);
+            resetFrameForWord();
+            setAnswerColor();
+            
+        }
+        else
+        {
+            Debug.Log("실패");
+            setActiveFrameForWord(0);
+        }
+        
+    }
     public int setInput(char[] inputs,int index)
     {    
         int grayIndex = 0;
@@ -113,7 +171,7 @@ public class Row : MonoBehaviour
     
     }
 
-    void resetFrameForWord()
+    public void resetFrameForWord()
     {
         for (int i = 0; i < cells.Count; i++)
         {
@@ -159,7 +217,6 @@ public class Row : MonoBehaviour
         }
         for (int i = 0; i < sprites.Count; i++)
         {
-
 
             StartRotation(i, sprites[i]);
             //Debug.Log("sprites"+(GetRowIndex()*columns+i));
