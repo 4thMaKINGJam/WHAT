@@ -14,6 +14,10 @@ public class PanelSwitcher : MonoBehaviour
         ShowPanel(currentPanelIndex);
     }
 
+    public void Exit()
+    {
+        SceneManager.LoadScene("CollectionScene");
+    }
     void Update()
     {
         // 마우스 클릭으로 판넬 전환
@@ -31,9 +35,6 @@ public class PanelSwitcher : MonoBehaviour
 
     void SwitchToNextPanel()
     {
-        // 현재 판넬 비활성화
-        panels[currentPanelIndex].SetActive(false);
-
         // 다음 판넬 인덱스 증가
         currentPanelIndex++;
 
@@ -59,18 +60,6 @@ void SwitchToPreviousPanel()
 
     // 이전 판넬 인덱스로 이동
     currentPanelIndex--;
-
-    // 모든 판넬을 확인하고 첫 번째 판넬보다 이전이면 마지막 판넬로 이동
-    if (currentPanelIndex < 0)
-    {
-        currentPanelIndex = panels.Length - 1;
-
-        // 모든 판넬 비활성화
-        foreach (var panel in panels)
-        {
-            panel.SetActive(false);
-        }
-    }
 
     // 이전 판넬 활성화
     ShowPanel(currentPanelIndex);
