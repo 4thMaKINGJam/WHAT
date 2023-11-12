@@ -68,7 +68,7 @@ public class Row : MonoBehaviour
             {
                 cells[i].GetComponent<Image>().color = gray;
             }
-            else if (i > rowAnswer.Length-totalGray)
+            else if (i > rowAnswer.Length-totalGray-1)
             {
                 cells[i].GetComponent<Image>().color = gray;
             }
