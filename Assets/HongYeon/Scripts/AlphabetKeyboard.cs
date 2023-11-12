@@ -13,13 +13,17 @@ public class AlphabetKeyboard : MonoBehaviour
     private List<char> WordList;
     private char[] userInputs = new char[10];
     private int userInputsIndex = 0;
+    private int cellIndex = 0;
 
     private string rowWord = "default";
     Image[] images = new Image[14];
     Image[] frames = new Image[14];
+    
 
-    private Image[] frameForWord = new Image[10];
+    private GameObject[] KeyBoardPicked = new GameObject[10];
     private GameObject selectedRow;
+    
+    
     string getWord()
     {
         return rowWord;
@@ -42,27 +46,60 @@ public class AlphabetKeyboard : MonoBehaviour
     }
 
 
-    public bool clickBtn(char input)
+    public bool clickBtn(char input,Image img)
     {
         Row rowScript = selectedRow.GetComponent<Row>();
-        if( rowScript.getTotalIndex() < userInputsIndex)
+        if( rowScript.getTotalIndex() <= userInputsIndex)
         {
             return false;
         }
         userInputs[userInputsIndex] = input;
+        KeyBoardPicked[userInputsIndex] = img.gameObject;
         userInputsIndex++;
-        rowScript.setActiveFrameForWord(userInputsIndex); 
-        rowScript.setInput(userInputs,userInputsIndex);
+        cellIndex++;
+        
+        cellIndex+=rowScript.setInput(userInputs,userInputsIndex);
         return true;
     }
 
+    public void clickDeleteBtn()
+    {
+        Row rowScript = selectedRow.GetComponent<Row>();
+        if(userInputsIndex==0)
+        {
+            return;
+        }
+        userInputsIndex--;
+        cellIndex--;
+        userInputs[userInputsIndex] = ' ';
+        KeyBoardPicked[userInputsIndex].GetComponent<Alphabet>().resetBtn();
+        KeyBoardPicked[userInputsIndex] = null;
+
+        Debug.Log("----------"+userInputsIndex);
+        rowScript.deleteInput(userInputsIndex);
+        
+    }
+    
+    public void clickCheckBtn( )
+    {
+        Row rowScript = selectedRow.GetComponent<Row>();
+        if( rowScript.getTotalIndex() <= userInputsIndex)
+        {
+            return ;
+        }
+       // userInputs[userInputsIndex] = input;
+        userInputsIndex++;
+        rowScript.setInput(userInputs,userInputsIndex);
+   
+    }
 
     //imgaes의 클릭을 모두 해제하는 함수
     void ResetButton()
     {
-        for (int i = 0; i < images.Length; i++)
+        Alphabet[] sc = gameObject.GetComponentsInChildren<Alphabet>();
+        for (int i = 0; i < sc.Length; i++)
         {
-            images[i].color = new Color(1f, 1f, 1f);
+            sc[i].resetBtn();
         }
     }
 

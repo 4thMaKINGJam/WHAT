@@ -10,6 +10,7 @@ public class Alphabet : MonoBehaviour
     private Sprite originalImage; 
     private Image myImage;
     private Text text;
+    private Button button;
     private void Awake()
     {
         // Resources 폴더에서 이미지 가져오기
@@ -23,22 +24,24 @@ public class Alphabet : MonoBehaviour
         myImage = GetComponent<Image>();
         text = this.transform.GetChild(0).GetComponent<Text>();
         
-        Button button = gameObject.GetComponent<Button>();
+        button = gameObject.GetComponent<Button>();
         button.onClick.AddListener(ClickBtn);
     }
 
     void ClickBtn()
     {
 
-        if (transform.GetComponentInParent<AlphabetKeyboard>().clickBtn(text.text[0]))
+        if (transform.GetComponentInParent<AlphabetKeyboard>().clickBtn(text.text[0],myImage))
         {
         myImage.color = new Color(0.4f, 0.4f, 0.4f);
+        button.interactable = false;
     }
 }
 
-    void resetImage()
+    public void resetBtn()
     {
         myImage.color = new Color(1f,1f,1f);
+        button.interactable = true;
      //   myImage.sprite = clickedImage;
     }
 }

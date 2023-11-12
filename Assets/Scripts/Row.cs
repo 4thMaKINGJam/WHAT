@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +27,8 @@ public class Row : MonoBehaviour
     
     //띄어쓰기 개수 
     private int totalGray;
+    //띄어쓰기 위치
+    private List<int> grayIndex = new List<int>();
     
     public int getTotalIndex()
     {
@@ -53,35 +56,85 @@ public class Row : MonoBehaviour
 
     }
 
-    public void setInput(char[] inputs,int index)
+    public int setInput(char[] inputs,int index)
     {    
         int grayIndex = 0;
-       
-
-        
         for (int i = 0; i < index; i++)
         {
             if (index + grayIndex > rowAnswer.Length)
             {
-                return;
+                resetFrameForWord();
+                return grayIndex;
             }
-            
-            if (cells[i+grayIndex].GetComponent<Image>().color == gray)
+
+            if (cells[i + grayIndex].GetComponent<Image>().color == gray)
             {
                 grayIndex++;
-                Debug.Log("gray"+grayIndex);
+
             }
-           
-            setActiveFrameForWord(i+grayIndex);
             cells[i+grayIndex].transform.GetChild(1).GetComponent<Text>().text = inputs[i].ToString();
             cells[i+grayIndex].GetComponent<Image>().color = new Color(73 / 255f, 174 / 255f, 1);
-           
+            
         }
-    
+        setActiveFrameForWord(index+grayIndex);
+        
+        return
+        grayIndex;
+
     }
     
+    public void deleteInput(int userIndex)
+    {
+        int index = userIndex;
+       
+        if (totalGray>0 )
+        {
+            for (int i = 0; i < userIndex; i++)
+            {
+               // if (userIndex >grayIndex[0]+1) {index++;    Debug.Log("띄어쓰기칸이 추가됨" + index);}
+                //if(i > grayIndex[0]+1) 
+            }
+            if (userIndex >=grayIndex[0]) {index+=1;    Debug.Log(userIndex +"띄어쓰기칸이 추가됨" + index);}
+            // if (index == 0)
+            // {
+            //     cells[index].transform.GetChild(1).GetComponent<Text>().text = "";
+            //     cells[index].GetComponent<Image>().color = white;
+            //     setActiveFrameForWord(index);
+            //     return;
+            // }
+            //
+        }
+        
+        cells[index].transform.GetChild(1).GetComponent<Text>().text = "";
+        cells[index].GetComponent<Image>().color = white;
+        setActiveFrameForWord(index);
+        
+        return;
+    
+    }
+
+    void resetFrameForWord()
+    {
+        for (int i = 0; i < cells.Count; i++)
+        {
+            Image frameForWord = cells[i].transform.GetChild(0).GetComponent<Image>();
+            frameForWord.enabled = false;
+        }
+    }
    public void setActiveFrameForWord(int index)
     {
+        if(cells[index].GetComponent<Image>().color == gray)
+        {
+            index++;
+        }
+
+        if(index >= getTotalIndex())
+        {
+         
+            resetFrameForWord();
+            return;
+        }
+       
         for (int i = 0; i < cells.Count; i++)
         {
             Image frameForWord = cells[i].transform.GetChild(0).GetComponent<Image>();
@@ -93,6 +146,7 @@ public class Row : MonoBehaviour
             }
         }
     }
+   
     // 정답 맞출시 호출
     void setAnswerColor()
     {
@@ -182,7 +236,7 @@ public class Row : MonoBehaviour
             if (cell_index >= wordLength)
             {
                 cell.GetComponent<Image>().color = gray; //색깔수정 - 회색으로
-               
+                
             }
 
             else
@@ -190,6 +244,7 @@ public class Row : MonoBehaviour
                 if (rowAnswer[column].Equals(' '))
                 {
                     cell.GetComponent<Image>().color = gray; //색깔수정 - 띄어쓰기
+                    grayIndex.Add(column);
                     totalGray++;
                 }
             }
