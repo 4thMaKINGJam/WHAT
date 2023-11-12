@@ -101,7 +101,7 @@ public class AlphabetKeyboard : MonoBehaviour
         userInputsIndex = 0;
         userInputs = new char[10];
 
-        if (totalCorrect == 2)
+        if (totalCorrect == 10)
         {
             
             // GameObject.Find("Canvas").transform.Find("Clear").gameObject.SetActive(true);
