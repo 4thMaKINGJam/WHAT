@@ -2828,6 +2828,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2d9e226aeaf4800928cd3db1ac6287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
+  clear: {fileID: 0}
 --- !u!114 &1076612002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4721,6 +4723,10 @@ PrefabInstance:
     - target: {fileID: 5507601729173302791, guid: 2c82bcde1e343419097fe06deff5e3ca, type: 3}
       propertyPath: m_Name
       value: ExitPopUpPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507601729173302791, guid: 2c82bcde1e343419097fe06deff5e3ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c82bcde1e343419097fe06deff5e3ca, type: 3}

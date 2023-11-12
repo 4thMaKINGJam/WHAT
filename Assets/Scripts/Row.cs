@@ -114,7 +114,7 @@ public class Row : MonoBehaviour
             Debug.Log("실패");
             setActiveFrameForWord(0);
             GameObject.Find("GameManager").GetComponent<GameManager>().showminusLife();
-//            SoundManager.instance.PlayIncorrectSound();
+            SoundManager.instance.PlayIncorrectSound();
             
             if(GameObject.Find("GameManager").GetComponent<GameManager>().life == 0)
             {

@@ -108,8 +108,8 @@ public class AlphabetKeyboard : MonoBehaviour
             string num = gm.GetComponent<GameManager>().numOfStage;
             //Debug.Log(num+"---------------------");
             int stageNum = int.Parse(num);
-           // DataManager.instance.SaveStageData(stageNum); //스테이지 번호넣어주시면됩니다. 변수 만들어서 넣어주셔도 됩니다
-//            SoundManager.instance.PlayClearSound();
+            DataManager.instance.SaveStageData(stageNum); //스테이지 번호넣어주시면됩니다. 변수 만들어서 넣어주셔도 됩니다
+            SoundManager.instance.PlayClearSound();
             Outline[] outl = GameObject.Find("Canvas").GetComponentsInChildren<Outline>();
             foreach (var a in outl)
             {
