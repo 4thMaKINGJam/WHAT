@@ -18,17 +18,19 @@ public class AlphabetKeyboard : MonoBehaviour
     private string rowWord = "default";
     Image[] images = new Image[14];
     Image[] frames = new Image[14];
-    
+
+    private int totalCorrect = 0;
 
     private GameObject[] KeyBoardPicked = new GameObject[10];
     private GameObject selectedRow;
+    public GameObject gm,clear;
     
     
     string getWord()
     {
         return rowWord;
     }
-
+ 
     public void setRowWord(string word)
     {
         rowWord = word;
@@ -91,10 +93,36 @@ public class AlphabetKeyboard : MonoBehaviour
         }
         
 //        Debug.Log(input +"here");
-        rowScript.checkAnswer(input);
+        if (rowScript.checkAnswer(input))
+        {
+            totalCorrect++;
+        }
         ResetButton();
         userInputsIndex = 0;
         userInputs = new char[10];
+
+        if (totalCorrect == 2)
+        {
+            
+            // GameObject.Find("Canvas").transform.Find("Clear").gameObject.SetActive(true);
+            string num = gm.GetComponent<GameManager>().numOfStage;
+            //Debug.Log(num+"---------------------");
+            int stageNum = int.Parse(num);
+           // DataManager.instance.SaveStageData(stageNum); //스테이지 번호넣어주시면됩니다. 변수 만들어서 넣어주셔도 됩니다
+//            SoundManager.instance.PlayClearSound();
+            Outline[] outl = GameObject.Find("Canvas").GetComponentsInChildren<Outline>();
+            foreach (var a in outl)
+            {
+                a.enabled = false;
+            }
+            
+            GameObject.Find("Frame").SetActive(false);
+            GameObject.Find("Meaning").SetActive(false);
+            clear.SetActive(true);
+            this.gameObject.SetActive(false);
+
+        }
+        
     }
 
     //imgaes의 클릭을 모두 해제하는 함수
