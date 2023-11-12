@@ -9,6 +9,7 @@ public class DataManager : MonoBehaviour
     private void Awake()
     {
 
+        // PlayerPrefs.DeleteAll();
         if (instance == null) //존재하고 있지 않을때
         {
             instance = this; //다시 최신화

@@ -64,18 +64,35 @@ public class Row : MonoBehaviour
             cells[i].transform.GetChild(1).GetComponent<Text>().text = "";
             cells[i].GetComponent<Image>().color = white;
             
-            if (totalGray>0 && grayIndex[0]==i )
+            cells[i].GetComponent<Image>().color = white;
+            
+            if (i >= rowAnswer.Length)
             {
-                cells[i].GetComponent<Image>().color = gray;
+                cells[i].GetComponent<Image>().color = gray; //색깔수정 - 회색으로
+                
             }
-            else if (i > rowAnswer.Length-totalGray-1)
-            {
-                cells[i].GetComponent<Image>().color = gray;
-            }
+
             else
             {
-                cells[i].GetComponent<Image>().color = white;
+                if (rowAnswer[i].Equals(' '))
+                {
+                    cells[i].GetComponent<Image>().color = gray; //색깔수정 - 띄어쓰기
+                   
+                }
             }
+            
+            // if (totalGray>0 && grayIndex[0]==i )
+            // {
+            //     cells[i].GetComponent<Image>().color = gray;
+            // }
+            // else if (i > rowAnswer.Length-totalGray-1)
+            // {
+            //     cells[i].GetComponent<Image>().color = gray;
+            // }
+            // else
+            // {
+            //     cells[i].GetComponent<Image>().color = white;
+            // }
        }
     }
 
@@ -140,6 +157,8 @@ public class Row : MonoBehaviour
                 grayIndex++;
 
             }
+            
+            
             cells[i+grayIndex].transform.GetChild(1).GetComponent<Text>().text = inputs[i].ToString();
             cells[i+grayIndex].GetComponent<Image>().color = new Color(233 / 255f, 255 / 255f, 188/255f);
             
