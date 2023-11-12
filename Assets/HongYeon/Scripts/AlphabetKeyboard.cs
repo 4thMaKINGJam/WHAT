@@ -11,11 +11,19 @@ public class AlphabetKeyboard : MonoBehaviour
 
     private Text[] alphabetTextComs;
     private List<char> WordList;
-
+    private char[] userInputs = new char[10];
+    private int userInputsIndex = 0;
+    private int cellIndex = 0;
 
     private string rowWord = "default";
     Image[] images = new Image[14];
     Image[] frames = new Image[14];
+    
+
+    private GameObject[] KeyBoardPicked = new GameObject[10];
+    private GameObject selectedRow;
+    
+    
     string getWord()
     {
         return rowWord;
@@ -36,34 +44,75 @@ public class AlphabetKeyboard : MonoBehaviour
         Debug.Log("awake");
         WordList = new List<char>();
     }
-    // Start is called before the first frame update
-    void Start()
+
+    public bool clickBtn(char input,Image img)
     {
-
-
-
+        Row rowScript = selectedRow.GetComponent<Row>();
+        if( rowScript.getTotalIndex() <= userInputsIndex)
+        {
+            return false;
+        }
+        userInputs[userInputsIndex] = input;
+        KeyBoardPicked[userInputsIndex] = img.gameObject;
+        userInputsIndex++;
+        cellIndex++;
+        
+        cellIndex+=rowScript.setInput(userInputs,userInputsIndex);
+        return true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void clickDeleteBtn()
     {
+        Row rowScript = selectedRow.GetComponent<Row>();
+        if(userInputsIndex==0)
+        {
+            return;
+        }
+        userInputsIndex--;
+        cellIndex--;
+        userInputs[userInputsIndex] = ' ';
+        KeyBoardPicked[userInputsIndex].GetComponent<Alphabet>().resetBtn();
+        KeyBoardPicked[userInputsIndex] = null;
 
+        Debug.Log("----------"+userInputsIndex);
+        rowScript.deleteInput(userInputsIndex);
+        
     }
+    
+    public void clickCheckBtn( )
+    {
+        Row rowScript = selectedRow.GetComponent<Row>();
 
+        string input = "";
+        foreach (var ch in userInputs)
+        {
+            
+             input += ch;
+        }
+        
+//        Debug.Log(input +"here");
+        rowScript.checkAnswer(input);
+        ResetButton();
+        userInputsIndex = 0;
+        userInputs = new char[10];
+    }
 
     //imgaes의 클릭을 모두 해제하는 함수
     void ResetButton()
     {
-        for (int i = 0; i < images.Length; i++)
+        Alphabet[] sc = gameObject.GetComponentsInChildren<Alphabet>();
+        for (int i = 0; i < sc.Length; i++)
         {
-            images[i].color = new Color(1f, 1f, 1f);
+            sc[i].resetBtn();
         }
     }
 
-    public void setFrame(int index)
+    public void setFrame(GameObject row,int index)
     {
         frames = GameObject.Find("Frame").GetComponentsInChildren<Image>();
-
+       
+        
+        
         for (int i = 0; i < frames.Length; i++)
         {
             frames[i].enabled = false;
@@ -73,6 +122,22 @@ public class AlphabetKeyboard : MonoBehaviour
                 Debug.Log("index: " + i);
             }
         }
+        
+        //word frame
+        userInputsIndex = 0;
+        selectedRow = row;
+        
+        GameObject gms = row.transform.parent.gameObject;
+        
+        Row[] rows = gms.GetComponentsInChildren<Row>();
+
+        for (int i = 0; i < rows.Length; i++)
+        {
+            rows[i].resetFrameForWord();
+        }
+        row.GetComponent<Row>().setActiveFrameForWord( userInputsIndex); 
+        
+        
 
     }
     public void SetKeyboard()
