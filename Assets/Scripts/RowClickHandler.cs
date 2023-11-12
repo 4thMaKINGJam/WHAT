@@ -87,7 +87,7 @@ public class RowClickHandler : MonoBehaviour, IPointerClickHandler
         keyBoard.GetComponent<AlphabetKeyboard>().setRowWord(answer);
         //키보드 보이게 + 키보드 글자 생성
         keyBoard.GetComponent<AlphabetKeyboard>().SetKeyboard();
-        keyBoard.GetComponent<AlphabetKeyboard>().setFrame(rowIndex);
+        keyBoard.GetComponent<AlphabetKeyboard>().setFrame(this.gameObject,rowIndex);
 
         hasBeenClicked = false;
     }

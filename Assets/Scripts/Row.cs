@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,22 @@ public class Row : MonoBehaviour
 
     //GameManager를 찾아서 가져오기
     private GameManager gameManager;
+    private string rowAnswer;
+    
+    //띄어쓰기 개수 
+    private int totalGray;
+    
+    public int getTotalIndex()
+    {
+        return rowAnswer.Length - totalGray;
+    }
+
+
+    private void Awake()
+    {
+        rowAnswer = "";
+        totalGray = 0;
+    }
 
     void Start()
     {
@@ -36,6 +53,46 @@ public class Row : MonoBehaviour
 
     }
 
+    public void setInput(char[] inputs,int index)
+    {    
+        int grayIndex = 0;
+       
+
+        
+        for (int i = 0; i < index; i++)
+        {
+            if (index + grayIndex > rowAnswer.Length)
+            {
+                return;
+            }
+            
+            if (cells[i+grayIndex].GetComponent<Image>().color == gray)
+            {
+                grayIndex++;
+                Debug.Log("gray"+grayIndex);
+            }
+           
+            setActiveFrameForWord(i+grayIndex);
+            cells[i+grayIndex].transform.GetChild(1).GetComponent<Text>().text = inputs[i].ToString();
+            cells[i+grayIndex].GetComponent<Image>().color = new Color(73 / 255f, 174 / 255f, 1);
+           
+        }
+    
+    }
+    
+   public void setActiveFrameForWord(int index)
+    {
+        for (int i = 0; i < cells.Count; i++)
+        {
+            Image frameForWord = cells[i].transform.GetChild(0).GetComponent<Image>();
+            frameForWord.enabled = false;
+
+            if (index == i)
+            {
+                frameForWord.enabled = true;
+            }
+        }
+    }
     // 정답 맞출시 호출
     void setAnswerColor()
     {
@@ -53,6 +110,8 @@ public class Row : MonoBehaviour
             StartRotation(i, sprites[i]);
             //Debug.Log("sprites"+(GetRowIndex()*columns+i));
         }
+  
+
     }
 
     public void StartRotation(int i, Image uiImage)
@@ -113,7 +172,7 @@ public class Row : MonoBehaviour
         int cell_index = 0;
         int rowIndex = GetRowIndex();
 
-        string rowAnswer = gameManager.words[rowIndex]; //단어 리스트에서 row에 해당하는 단어 가져오기
+         rowAnswer = gameManager.words[rowIndex]; //단어 리스트에서 row에 해당하는 단어 가져오기
         int wordLength = rowAnswer.Length;
 
         for (int column = 0; column < 10; ++column)
@@ -123,6 +182,7 @@ public class Row : MonoBehaviour
             if (cell_index >= wordLength)
             {
                 cell.GetComponent<Image>().color = gray; //색깔수정 - 회색으로
+               
             }
 
             else
@@ -130,6 +190,7 @@ public class Row : MonoBehaviour
                 if (rowAnswer[column].Equals(' '))
                 {
                     cell.GetComponent<Image>().color = gray; //색깔수정 - 띄어쓰기
+                    totalGray++;
                 }
             }
             cell.transform.SetParent(parentRow.transform, false);

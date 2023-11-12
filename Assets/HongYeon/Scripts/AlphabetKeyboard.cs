@@ -11,11 +11,15 @@ public class AlphabetKeyboard : MonoBehaviour
 
     private Text[] alphabetTextComs;
     private List<char> WordList;
-
+    private char[] userInputs = new char[10];
+    private int userInputsIndex = 0;
 
     private string rowWord = "default";
     Image[] images = new Image[14];
     Image[] frames = new Image[14];
+
+    private Image[] frameForWord = new Image[10];
+    private GameObject selectedRow;
     string getWord()
     {
         return rowWord;
@@ -36,18 +40,20 @@ public class AlphabetKeyboard : MonoBehaviour
         Debug.Log("awake");
         WordList = new List<char>();
     }
-    // Start is called before the first frame update
-    void Start()
+
+
+    public bool clickBtn(char input)
     {
-
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        Row rowScript = selectedRow.GetComponent<Row>();
+        if( rowScript.getTotalIndex() < userInputsIndex)
+        {
+            return false;
+        }
+        userInputs[userInputsIndex] = input;
+        userInputsIndex++;
+        rowScript.setActiveFrameForWord(userInputsIndex); 
+        rowScript.setInput(userInputs,userInputsIndex);
+        return true;
     }
 
 
@@ -60,10 +66,12 @@ public class AlphabetKeyboard : MonoBehaviour
         }
     }
 
-    public void setFrame(int index)
+    public void setFrame(GameObject row,int index)
     {
         frames = GameObject.Find("Frame").GetComponentsInChildren<Image>();
-
+       
+        
+        
         for (int i = 0; i < frames.Length; i++)
         {
             frames[i].enabled = false;
@@ -73,6 +81,11 @@ public class AlphabetKeyboard : MonoBehaviour
                 Debug.Log("index: " + i);
             }
         }
+        
+        //word frame
+        userInputsIndex = 0;
+        selectedRow = row;
+        row.GetComponent<Row>().setActiveFrameForWord( userInputsIndex); 
 
     }
     public void SetKeyboard()

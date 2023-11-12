@@ -9,7 +9,7 @@ public class Alphabet : MonoBehaviour
     private Sprite clickedImage; // 클릭할 때 보여질 새 이미지
     private Sprite originalImage; 
     private Image myImage;
-
+    private Text text;
     private void Awake()
     {
         // Resources 폴더에서 이미지 가져오기
@@ -21,14 +21,20 @@ public class Alphabet : MonoBehaviour
     {
         // 현재 GameObject에 연결된 Image 컴포넌트 가져오기
         myImage = GetComponent<Image>();
+        text = this.transform.GetChild(0).GetComponent<Text>();
+        
         Button button = gameObject.GetComponent<Button>();
-        button.onClick.AddListener(ChangeImage);
+        button.onClick.AddListener(ClickBtn);
     }
 
-    void ChangeImage()
+    void ClickBtn()
     {
-        myImage.color = new Color(0.4f,0.4f,0.4f);
+
+        if (transform.GetComponentInParent<AlphabetKeyboard>().clickBtn(text.text[0]))
+        {
+        myImage.color = new Color(0.4f, 0.4f, 0.4f);
     }
+}
 
     void resetImage()
     {
