@@ -806,6 +806,8 @@ GameObject:
   - component: {fileID: 36149187}
   - component: {fileID: 36149186}
   - component: {fileID: 36149185}
+  - component: {fileID: 36149189}
+  - component: {fileID: 36149188}
   m_Layer: 5
   m_Name: Puzzle (7)
   m_TagString: Untagged
@@ -930,6 +932,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36149183}
   m_CullTransparentMesh: 1
+--- !u!114 &36149188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36149183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &36149189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36149183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadaf72aea704629ac8da7de9b24b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stagenum: 8
 --- !u!1 &47049125
 GameObject:
   m_ObjectHideFlags: 0
@@ -5206,6 +5233,8 @@ GameObject:
   - component: {fileID: 169626529}
   - component: {fileID: 169626528}
   - component: {fileID: 169626527}
+  - component: {fileID: 169626531}
+  - component: {fileID: 169626530}
   m_Layer: 5
   m_Name: Puzzle (3)
   m_TagString: Untagged
@@ -5330,6 +5359,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169626525}
   m_CullTransparentMesh: 1
+--- !u!114 &169626530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169626525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &169626531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169626525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadaf72aea704629ac8da7de9b24b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stagenum: 4
 --- !u!1 &171718206
 GameObject:
   m_ObjectHideFlags: 0
@@ -6412,6 +6466,8 @@ GameObject:
   - component: {fileID: 268710213}
   - component: {fileID: 268710212}
   - component: {fileID: 268710211}
+  - component: {fileID: 268710215}
+  - component: {fileID: 268710214}
   m_Layer: 5
   m_Name: Puzzle (2)
   m_TagString: Untagged
@@ -6536,6 +6592,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268710209}
   m_CullTransparentMesh: 1
+--- !u!114 &268710214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268710209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &268710215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268710209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadaf72aea704629ac8da7de9b24b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stagenum: 3
 --- !u!1 &273207135
 GameObject:
   m_ObjectHideFlags: 0
@@ -6725,6 +6806,8 @@ GameObject:
   - component: {fileID: 328596317}
   - component: {fileID: 328596316}
   - component: {fileID: 328596315}
+  - component: {fileID: 328596319}
+  - component: {fileID: 328596318}
   m_Layer: 5
   m_Name: Puzzle (6)
   m_TagString: Untagged
@@ -6849,6 +6932,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328596313}
   m_CullTransparentMesh: 1
+--- !u!114 &328596318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328596313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &328596319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328596313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadaf72aea704629ac8da7de9b24b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stagenum: 7
 --- !u!224 &329996311 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9112590644331782541, guid: ea0fe8dabb0381e4cb2394a199b3dc4a, type: 3}
@@ -11272,6 +11380,8 @@ GameObject:
   - component: {fileID: 590043138}
   - component: {fileID: 590043137}
   - component: {fileID: 590043136}
+  - component: {fileID: 590043140}
+  - component: {fileID: 590043139}
   m_Layer: 5
   m_Name: Puzzle (4)
   m_TagString: Untagged
@@ -11396,6 +11506,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590043134}
   m_CullTransparentMesh: 1
+--- !u!114 &590043139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590043134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &590043140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590043134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadaf72aea704629ac8da7de9b24b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stagenum: 5
 --- !u!1 &603260382
 GameObject:
   m_ObjectHideFlags: 0
@@ -23242,6 +23377,8 @@ GameObject:
   - component: {fileID: 1305956165}
   - component: {fileID: 1305956164}
   - component: {fileID: 1305956163}
+  - component: {fileID: 1305956167}
+  - component: {fileID: 1305956166}
   m_Layer: 5
   m_Name: Puzzle (5)
   m_TagString: Untagged
@@ -23366,6 +23503,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305956161}
   m_CullTransparentMesh: 1
+--- !u!114 &1305956166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305956161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1305956167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305956161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadaf72aea704629ac8da7de9b24b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stagenum: 6
 --- !u!1 &1306578106
 GameObject:
   m_ObjectHideFlags: 0

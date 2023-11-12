@@ -4191,6 +4191,14 @@ PrefabInstance:
       propertyPath: GameOverPanel
       value: 
       objectReference: {fileID: 1209087721}
+    - target: {fileID: 5523698937251281666, guid: fda0df94ee4de4cdcbe835b61a8356ea, type: 3}
+      propertyPath: meanings.Array.data[4]
+      value: "[\uBA85] \u201C__ \uD558\uB098 \uC8FC\uBA74 \uC548 \uC7A1\uC544\uBA39\uC9C0~!\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523698937251281666, guid: fda0df94ee4de4cdcbe835b61a8356ea, type: 3}
+      propertyPath: meanings.Array.data[5]
+      value: "[\uD615] \uB974\uC138\uB77C\uD54C\uC758 \uB370\uBDD4\uACE1."
+      objectReference: {fileID: 0}
     - target: {fileID: 5523698937251281667, guid: fda0df94ee4de4cdcbe835b61a8356ea, type: 3}
       propertyPath: m_RootOrder
       value: 4
