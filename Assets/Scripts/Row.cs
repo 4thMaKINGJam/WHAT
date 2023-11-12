@@ -26,7 +26,7 @@ public class Row : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         CreateRow();
-        //setAnswerColor();
+        setAnswerColor();
 
     }
 

@@ -505,6 +505,7 @@ MonoBehaviour:
   - "[\uB3D9] \uC704\uAE09\uD55C \uC0C1\uD669\uC5D0\uC11C \uC5B8\uC81C\uB098 \uD1B5\uD568:
     \u2018_______ me!\u2019"
   pixels: []
+  numOfStage: 4
 --- !u!4 &88312177
 Transform:
   m_ObjectHideFlags: 0

@@ -11,10 +11,11 @@ public class GameManager : MonoBehaviour
     public List<string> meanings = new List<string>();
 
     public Sprite[] pixels;
+    public string numOfStage;
 
     void Awake()
     {
-        LoadSprite("1");
+        LoadSprite(numOfStage);
 
     }
 
