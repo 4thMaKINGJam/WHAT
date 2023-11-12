@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    public static SceneChange instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+
     public void ChangeToCollectionScene()
     {
         SceneManager.LoadScene("CollectionScene");
