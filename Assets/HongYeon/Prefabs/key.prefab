@@ -135,7 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33421627d82d44e00bc27f9939e40b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newImage: {fileID: 21300000, guid: 1934ed010f9a548048bcc51426d8204c, type: 3}
 --- !u!1 &4150704449705040966
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,4 +214,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: B
