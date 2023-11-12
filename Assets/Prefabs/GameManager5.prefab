@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5242268535933442615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5242268535933442601}
+  - component: {fileID: 5242268535933442600}
+  m_Layer: 0
+  m_Name: GameManager5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5242268535933442601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5242268535933442615}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 526.66364, y: 1245.7499, z: -8.68925}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5242268535933442600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5242268535933442615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b255dddf1144cf382fb8ac6c1aa2f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  words:
+  - Eye
+  - Sure
+  - Root
+  - Vitamin
+  - Dessert
+  - Orange
+  - Healthy
+  - Market
+  - Salad
+  - SOS
+  meanings:
+  - "[\uBA85] \u2018___\uC5D0\uB294 ___, \uC774\uC5D0\uB294 \uC774\u2019"
+  - "[\uBD80] \u2018\uB2F9\uADFC\uC774\uC9C0!\u2019"
+  - "[\uBA85] \uC218\uD559 \uAE30\uD638: \u221A"
+  - "[\uBA85] \uC778\uAC04\uC774 \uC2A4\uC2A4\uB85C \uD569\uC131\uD574\uB0B4\uC9C0
+    \uBABB\uD558\uB294 \uD544\uC218 \uC694\uC18C"
+  - "[\uBA85] \uCFE0\uD0A4, \uCF00\uC774\uD06C, \uD0C0\uB974\uD2B8, \uB9C8\uCE74\uB871,
+    \uACFC\uC77C \uB4F1\uC744 \uBB36\uB294 \uCE74\uD14C\uACE0\uB9AC"
+  - "[\uBA85] \uCC45: \uB098\uC758 \uB77C\uC784 _______\uB098\uBB34."
+  - "[\uD615] \uAC74\uAC15\uD55C."
+  - "[\uBA85] \uC911\uACE0 \uAC70\uB798 \uC5B4\uD50C: \uB2F9\uADFC______"
+  - "[\uBA85] \uC591\uC0C1\uCD94, \uB9AC\uCF54\uD0C0\uCE58\uC988, \uCF00\uC774\uC900,
+    \uC5F0\uC5B4, \uC591\uD30C, \uB4DC\uB808\uC2F1 \uB4F1\uC744 \uB123\uC5B4 \uBA39\uB294
+    \uAC83."
+  - "[\uBA85] \uBB34\uC778\uB3C4\uC5D0 \uC870\uB09C \uB2F9\uD588\uC744 \uB54C \uBAA8\uB798\uC0AC\uC7A5\uC5D0
+    \uC4F0\uB294 \uB2E8\uC5B4."
+  pixels: []
+  numOfStage: 5

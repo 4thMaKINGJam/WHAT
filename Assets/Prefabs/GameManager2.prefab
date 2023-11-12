@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5687449959041964304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5687449959041964302}
+  - component: {fileID: 5687449959041964303}
+  m_Layer: 0
+  m_Name: GameManager2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5687449959041964302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5687449959041964304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 526.66364, y: 1245.7499, z: -8.68925}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5687449959041964303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5687449959041964304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b255dddf1144cf382fb8ac6c1aa2f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  words:
+  - Huge
+  - Circus
+  - Endangered
+  - Rainforest
+  - Wilderness
+  - Perceptive
+  - Hinduism
+  - Wisdom
+  - Trunk
+  - Grey
+  meanings:
+  - "[\uD615] \uAC70\uB300\uD55C"
+  - "[\uBA85] \uC804\uC138\uACC4\uC801\uC73C\uB85C \uC720\uBA85\uD55C \uC1FC\uB85C
+    \u2018\uD0DC\uC591\uC758 ______\u2019\uC774 \uC788\uC74C."
+  - "[\uD615\uC6A9\uC0AC] \uD638\uB791\uC774, \uD310\uB2E4, \uC0B0\uD638\uCD08\uB294
+    \uB300\uD45C\uC801\uC778 ________ \uC885\uC784."
+  - "[\uBA85] \uC544\uB9C8\uC874\uC5D0\uB294 \uC5C4\uCCAD\uB09C ________\uC774 \uC874\uC7AC\uD568."
+  - "[\uBA85] __________\uC758 \uBB34\uBC95\uC790."
+  - "[\uD615] \u2018have a very __________ mind\u2019\uB294 \uC601\uC5B4\uB85C \u2018\uD558\uB098\uB97C
+    \uBCF4\uACE0 \uC5F4\uC744 \uC548\uB2E4\u2019\uB77C\uB294 \uB73B\uC784."
+  - "[\uBA85] \uBBFF\uB294 \uC2E0\uC774 \uB9CE\uC740 \uC885\uAD50."
+  - "[\uBA85] \uC0AC\uB791\uB2C8\uB97C \uC601\uC5B4\uB85C \uD558\uBA74 \u2018________
+    teeth\u2019."
+  - "[\uBA85] \uC5B4\uB5A4 \uB3D9\uBB3C\uC740 \uC774\uAC78 \uC190\uC73C\uB85C \uC0AC\uC6A9\uD568.
+    \uB610\uB294 \uC790\uB3D9\uCC28 \uB4A4\uC5D0 \uC9D0\uC744 \uB123\uB294 \uACF3."
+  - "[\uBA85] \uC560\uB9E4\uD558\uAC70\uB098 \uBAA8\uD638\uD55C \uC601\uC5ED\uC744
+    \uB73B\uD558\uB294 \uB9D0 \u2018____ area\u2019."
+  pixels: []
+  numOfStage: 1
