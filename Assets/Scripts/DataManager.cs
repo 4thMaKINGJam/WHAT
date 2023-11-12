@@ -8,9 +8,14 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
-        if (DataManager.instance == null)
+        if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -26,7 +31,7 @@ public class DataManager : MonoBehaviour
     
     */
 
-    public static void SetInitialData()
+    public void SetInitialData()
     {
         if (!PlayerPrefs.HasKey("TotalStage"))
         {
@@ -42,20 +47,16 @@ public class DataManager : MonoBehaviour
             PlayerPrefs.SetString("Stage8", "lock");
             PlayerPrefs.SetString("Stage9", "lock");
         }
-        else
-        {
-            SceneChange.instance.ChangeToCollectionScene();
-        }
     }
 
 
-    public static void SaveStageData(int stageNum)
+    public void SaveStageData(int stageNum)
     {
         string stageInfo = "Stage" + stageNum.ToString();
         PlayerPrefs.SetString(stageInfo, "clear");
     }
 
-    public static bool LoadStageData(int stageNum)
+    public bool LoadStageData(int stageNum)
     {
         string stageInfo = "Stage" + stageNum.ToString();
         string stageState = PlayerPrefs.GetString(stageInfo);

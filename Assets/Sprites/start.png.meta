@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd831439c896c41ffb46a291566c4a2e
+guid: 63491a6b8049a44ba8cc6a65ea6621e5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 482, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -117,43 +117,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: start_0
+      name: Start_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 480
-        height: 160
+        width: 600
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 29, y: 47, z: 29, w: 28}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25ea81939bed5414b8ffa2072661b54a
-      internalID: 1811382062
+      spriteID: 4a3b84515149344dca9922cd0120155e
+      internalID: -1628906371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: start_1
+      name: Start_1
       rect:
         serializedVersion: 2
-        x: 480
+        x: 600
         y: 0
-        width: 480
-        height: 160
+        width: 600
+        height: 200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 31, y: 39, z: 32, w: 38}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4950aa342c1394a9db5d975ea9216d05
-      internalID: -795296883
+      spriteID: 22dab54fb2d41455ea2a3e0162b0e464
+      internalID: 2065954673
       vertices: []
       indices: 
       edges: []
@@ -162,15 +162,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      start_0: 1811382062
-      start_1: -795296883
+      Start_1: 2065954673
+      Start_0: -1628906371
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

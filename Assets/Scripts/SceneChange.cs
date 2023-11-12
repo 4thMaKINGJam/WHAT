@@ -9,12 +9,20 @@ public class SceneChange : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-
 
     public void ChangeToCollectionScene()
     {
+        DataManager.instance.SetInitialData();
         SceneManager.LoadScene("CollectionScene");
     }
     public void ChangeToTestScene()

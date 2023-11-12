@@ -12,14 +12,16 @@ public class Lock : MonoBehaviour
     {
         lockObject = this.gameObject.transform.GetChild(1).gameObject;
 
-        if (!DataManager.LoadStageData(stagenum))
+        if (!DataManager.instance.LoadStageData(stagenum))
         {
 
             lockObject.SetActive(true);
+            Debug.Log("Lock");
         }
         else
         {
             lockObject.SetActive(false);
+            Debug.Log("Clear");
         }
     }
 
