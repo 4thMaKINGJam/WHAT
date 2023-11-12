@@ -8,14 +8,16 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+
+        if (instance == null) //존재하고 있지 않을때
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            instance = this; //다시 최신화
+            DontDestroyOnLoad(gameObject); //씬변경시 파괴 x
         }
         else
         {
-            Destroy(gameObject);
+            if (instance != this) //중복으로 존재할시에는 파괴! 
+                Destroy(this.gameObject);
         }
     }
 

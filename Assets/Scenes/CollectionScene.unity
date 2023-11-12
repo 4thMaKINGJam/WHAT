@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 36149187}
   - component: {fileID: 36149186}
   - component: {fileID: 36149185}
+  - component: {fileID: 36149189}
   - component: {fileID: 36149188}
   m_Layer: 5
   m_Name: Puzzle (7)
@@ -434,7 +435,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 990965967}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -497,6 +498,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagenum: 8
+--- !u!114 &36149189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36149183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &55858827
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +522,7 @@ GameObject:
   - component: {fileID: 55858831}
   - component: {fileID: 55858830}
   - component: {fileID: 55858829}
+  - component: {fileID: 55858833}
   - component: {fileID: 55858832}
   m_Layer: 5
   m_Name: Puzzle (1)
@@ -584,7 +598,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 990965968}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
         m_MethodName: ChangeToStage2
         m_Mode: 1
@@ -647,6 +661,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagenum: 2
+--- !u!114 &55858833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55858827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &80175375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1123,7 @@ GameObject:
   - component: {fileID: 169626529}
   - component: {fileID: 169626528}
   - component: {fileID: 169626527}
+  - component: {fileID: 169626531}
   - component: {fileID: 169626530}
   m_Layer: 5
   m_Name: Puzzle (3)
@@ -1172,7 +1199,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 990965968}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
         m_MethodName: ChangeToStage4
         m_Mode: 1
@@ -1235,6 +1262,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagenum: 4
+--- !u!114 &169626531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169626525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &201881674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,6 +1483,7 @@ GameObject:
   - component: {fileID: 268710213}
   - component: {fileID: 268710212}
   - component: {fileID: 268710211}
+  - component: {fileID: 268710215}
   - component: {fileID: 268710214}
   m_Layer: 5
   m_Name: Puzzle (2)
@@ -1519,7 +1559,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 990965968}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
         m_MethodName: ChangeToStage3
         m_Mode: 1
@@ -1582,6 +1622,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagenum: 3
+--- !u!114 &268710215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268710209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &328596313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1646,7 @@ GameObject:
   - component: {fileID: 328596317}
   - component: {fileID: 328596316}
   - component: {fileID: 328596315}
+  - component: {fileID: 328596319}
   - component: {fileID: 328596318}
   m_Layer: 5
   m_Name: Puzzle (6)
@@ -1669,7 +1722,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 990965967}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -1732,6 +1785,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagenum: 7
+--- !u!114 &328596319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328596313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &361666480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,6 +2126,7 @@ GameObject:
   - component: {fileID: 590043138}
   - component: {fileID: 590043137}
   - component: {fileID: 590043136}
+  - component: {fileID: 590043140}
   - component: {fileID: 590043139}
   m_Layer: 5
   m_Name: Puzzle (4)
@@ -2136,7 +2202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 990965968}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
         m_MethodName: ChangeToStage5
         m_Mode: 1
@@ -2199,6 +2265,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagenum: 5
+--- !u!114 &590043140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590043134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &657801745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,6 +2518,7 @@ GameObject:
   - component: {fileID: 798343472}
   - component: {fileID: 798343471}
   - component: {fileID: 798343470}
+  - component: {fileID: 798343474}
   - component: {fileID: 798343473}
   m_Layer: 5
   m_Name: Puzzle
@@ -2515,7 +2594,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 990965968}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
         m_MethodName: ChangeToTestScene
         m_Mode: 1
@@ -2578,6 +2657,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagenum: 1
+--- !u!114 &798343474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798343468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &807207835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2758,6 +2849,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &956900428
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 164264132561604937, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 164264132561604937, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 140.7611
+      objectReference: {fileID: 0}
+    - target: {fileID: 164264132561604937, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.8767738
+      objectReference: {fileID: 0}
+    - target: {fileID: 164264132561604937, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.6419744
+      objectReference: {fileID: 0}
+    - target: {fileID: 164264132561604937, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 164264132561604937, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 164264132561604937, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 164264132561604937, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 164264132561604937, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 164264132561604937, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 164264132561604937, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053951642791659402, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
+      propertyPath: m_Name
+      value: MainBGMSystem
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c4286459472c0436294d89aaa5c1238d, type: 3}
 --- !u!1 &990763180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,6 +3027,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990763180}
   m_CullTransparentMesh: 1
+--- !u!1 &990965967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 990965969}
+  - component: {fileID: 990965968}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &990965968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990965967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fccaafc5427045c094822b6e5a371e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &990965969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990965967}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 540, y: 960, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &992943528
 GameObject:
   m_ObjectHideFlags: 0
@@ -3585,6 +3777,7 @@ GameObject:
   - component: {fileID: 1305956165}
   - component: {fileID: 1305956164}
   - component: {fileID: 1305956163}
+  - component: {fileID: 1305956167}
   - component: {fileID: 1305956166}
   m_Layer: 5
   m_Name: Puzzle (5)
@@ -3660,7 +3853,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 990965968}
         m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
         m_MethodName: ChangeToStage6
         m_Mode: 1
@@ -3723,6 +3916,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagenum: 6
+--- !u!114 &1305956167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305956161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1401414886
 GameObject:
   m_ObjectHideFlags: 0
@@ -4276,6 +4481,7 @@ GameObject:
   - component: {fileID: 1855568686}
   - component: {fileID: 1855568685}
   - component: {fileID: 1855568684}
+  - component: {fileID: 1855568688}
   - component: {fileID: 1855568687}
   m_Layer: 5
   m_Name: Puzzle (8)
@@ -4351,7 +4557,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 990965967}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -4414,6 +4620,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagenum: 9
+--- !u!114 &1855568688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855568682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d495cd78efa4437297358300eb1685a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1862414255
 GameObject:
   m_ObjectHideFlags: 0
