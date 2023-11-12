@@ -141,7 +141,7 @@ public class Row : MonoBehaviour
 
             }
             cells[i+grayIndex].transform.GetChild(1).GetComponent<Text>().text = inputs[i].ToString();
-            cells[i+grayIndex].GetComponent<Image>().color = new Color(73 / 255f, 174 / 255f, 1);
+            cells[i+grayIndex].GetComponent<Image>().color = new Color(233 / 255f, 255 / 255f, 188/255f);
             
         }
         setActiveFrameForWord(index+grayIndex);
